@@ -2,6 +2,9 @@ import { useEffect } from "react";
 import useScript from "../hooks/useScript";
 
 export default function App() {
+  const FEELPAY_CLIENT_ID = import.meta.env.VITE_APP_FEELPAY_CLIENT_ID;
+  const FEELPAY_CLIENT_SECRET = import.meta.env.VITE_APP_FEELPAY_CLIENT_SECRET;
+
   const { loading, error } = useScript(
     "https://feelpay.vercel.app/packages/v1"
   );
@@ -9,8 +12,8 @@ export default function App() {
   useEffect(() => {
     const orderDetails = {
       element: "dreamfeel-pay-button",
-      clientId: "afc17c43531c2441",
-      clientSecret: "67d6bc1a5843172286ce6ca701f80094",
+      clientId: FEELPAY_CLIENT_ID,
+      clientSecret: FEELPAY_CLIENT_SECRET,
       description: "",
       order: {
         // Default for one time order checkout.
@@ -46,10 +49,10 @@ export default function App() {
       // Action when user cancels transaction!
       onUserCancel: () => {},
     };
-    const feelpay = new FeelPayWidget(orderDetails);
-    feelpay.init().then((pay) => {
-      console.log(pay);
-    });
+    setTimeout(() => {
+      const feelpay = new FeelPayWidget(orderDetails);
+      feelpay.init().then((pay) => {});
+    }, 1000);
   });
 
   if (loading) return <div>Loading</div>;
