@@ -12,8 +12,8 @@ export default function App() {
   useEffect(() => {
     const orderDetails = {
       element: "dreamfeel-pay-button",
-      clientId: FEELPAY_CLIENT_ID,
-      clientSecret: FEELPAY_CLIENT_SECRET,
+      clientId: "e1c40a3f019f9d50",
+      clientSecret: "45c9f56f0464e0b78e4e1918b3df520e",
       description: "",
       order: {
         // Default for one time order checkout.
