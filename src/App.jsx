@@ -78,14 +78,14 @@ export default function App() {
         </p>
         <div className="mt-9 justify-center gap-9 flex">
           <a
-            href="/"
+            href="https://github.com/OdidaProtas/feelpay-react"
             target="blank"
             className="text-sky-400  underline dark:text-blue-400"
           >
             View This Page Source Code
           </a>
           <a
-            href="/"
+            href="https://feelpay-docs.deno.dev/docs/frameworks/react"
             target="blank"
             className="text-sky-400  underline dark:text-blue-400"
           >
