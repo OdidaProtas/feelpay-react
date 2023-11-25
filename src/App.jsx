@@ -62,16 +62,38 @@ export default function App() {
   return (
     <div className="lg:px-48 min-h-screen dark:bg-gray-900">
       <div className="text-center">
-        <div className="flex justify-center my-5">
+        <div className="flex justify-center pt-24 pb-20 ">
           <img
             className="w-80"
             src="https://feelpay.io/_app/immutable/assets/logo-transparent.558d9349.png"
             alt=""
           />
         </div>
-        <h1 className="text-7xl dark:text-white font-bold">Reactjs Widget Demo </h1>
+        <h1 className="text-7xl dark:text-white font-bold">
+          Reactjs Widget Demo{" "}
+        </h1>
+        <p className=" dark:text-white mt-9">
+          An example of FeelPay seamlessly integrated into a React App, the
+          world's most popular web framework
+        </p>
+        <div className="mt-9 justify-center gap-9 flex">
+          <a
+            href="/"
+            target="blank"
+            className="text-sky-400  underline dark:text-blue-400"
+          >
+            View This Page Source Code
+          </a>
+          <a
+            href="/"
+            target="blank"
+            className="text-sky-400  underline dark:text-blue-400"
+          >
+            View React Integration Guide
+          </a>
+        </div>
       </div>
-      <div className="my-9" >
+      <div className="my-9">
         <div>
           <label
             for="amount"
