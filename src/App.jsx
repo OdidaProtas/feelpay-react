@@ -1,9 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import useScript from "../hooks/useScript";
 
 export default function App() {
   const FEELPAY_CLIENT_ID = import.meta.env.VITE_APP_FEELPAY_CLIENT_ID;
   const FEELPAY_CLIENT_SECRET = import.meta.env.VITE_APP_FEELPAY_CLIENT_SECRET;
+
+  const [amount, setAmount] = useState(1);
 
   const { loading, error } = useScript(
     "https://feelpay.vercel.app/packages/v1"
@@ -58,7 +60,35 @@ export default function App() {
   if (loading) return <div>Loading</div>;
   if (error) return <div>Error</div>;
   return (
-    <div>
+    <div className="lg:px-48 min-h-screen dark:bg-gray-900">
+      <div className="text-center">
+        <div className="flex justify-center my-5">
+          <img
+            className="w-80"
+            src="https://feelpay.io/_app/immutable/assets/logo-transparent.558d9349.png"
+            alt=""
+          />
+        </div>
+        <h1 className="text-7xl dark:text-white font-bold">Reactjs Widget Demo </h1>
+      </div>
+      <div className="my-9" >
+        <div>
+          <label
+            for="amount"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >
+            Enter an amount
+          </label>
+          <input
+            type="text"
+            id="amount"
+            name="amount"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="KES 1"
+            required
+          />
+        </div>
+      </div>
       <div id="dreamfeel-pay-button"></div>
     </div>
   );
